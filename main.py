@@ -6,7 +6,8 @@
 def encoder(password):
     encoded_password = ""
     for num in password:
-        encoded_password += chr(ord(num) + 3)
+        current_num = int(num)
+        encoded_password += str((current_num + 3) % 10)
     return encoded_password
 
 
