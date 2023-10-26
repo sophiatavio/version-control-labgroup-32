@@ -11,6 +11,14 @@ def encoder(password):
     return encoded_password
 
 
+def decode_password(input_password):   # Decode the password, subtracting 3 from each digit.
+    decoded_password = ""
+    for ch in input_password:
+        cur_digit = int(ch)
+        # Take mod 10 of the digit value minus 3, to ensure that the new digit is actually a digit.
+        decoded_password += str((cur_digit - 3) % 10)
+    return decoded_password
+
 def main():
     keep_going = True
     while True:
